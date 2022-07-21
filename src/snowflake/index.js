@@ -46,24 +46,27 @@ class Snowflake {
             if (err) {
               console.error(err);
               reject(err);
-            }
-            const rawResults = [];
-            for (const row of _rows) {
-              rawResults.push(row.V);
-            }
-            resolve(rawResults);
-            if (logging) {
-              console.log('Query id: ', statement.getStatementId());
-              console.log('Query Text:\n ', query);
-              console.log('Successfully executed Statement ');
-              // console.log('Successfully executed statement: ' + statement.getStatus);
+            } else {
+              const rawResults = [];
+              for (const row of _rows) {
+                rawResults.push(row.V);
+              }
+              resolve(rawResults);
+              if (logging) {
+                console.log('Query id: ', statement.getStatementId());
+                console.log('Query Text:\n ', query);
+                console.log('Successfully executed Statement ');
+                // console.log('Successfully executed statement: ' + statement.getStatus);
+              }
             }
           },
         });
       } catch (error) {
         reject(error);
       }
-    }).catch(() => {});
+    }).catch((error) => {
+      return error;
+    });
   }
 
   async disconnect() {

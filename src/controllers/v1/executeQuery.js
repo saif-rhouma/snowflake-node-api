@@ -9,6 +9,7 @@ const executeQuery = async (req, res) => {
       const sn = new Snowflake(environment.nodeEnv, snConfig);
       await sn.connect();
       const data = await sn.executeQuery(query);
+      console.log(data);
       await sn.disconnect();
       res.status(200).json(data);
     } else {
