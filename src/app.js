@@ -1,8 +1,11 @@
 import express from 'express';
+import chalk from 'chalk';
 import logger from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 import environment from './configs/environment';
+import errorsMiddleware from './middlewares/errors';
+import router from './routes';
 
 class App {
   constructor() {
@@ -15,7 +18,10 @@ class App {
     this.setRoutes();
   }
 
-  setRoutes() {}
+  setRoutes() {
+    this.app.use(router);
+    this.app.use(errorsMiddleware);
+  }
 
   getApp() {
     return this.app;
@@ -24,7 +30,7 @@ class App {
   listen() {
     const { port } = environment;
     this.app.listen(port, () => {
-      console.log(`Listening at Port ${port}`);
+      console.log(chalk.yellowBright.inverse.bold(`Server is Running on Port : ${port}!`));
     });
   }
 }

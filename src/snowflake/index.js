@@ -55,7 +55,8 @@ class Snowflake {
             if (logging) {
               console.log('Query id: ', statement.getStatementId());
               console.log('Query Text:\n ', query);
-              console.log('Successfully executed statement: ' + statement.getStatus);
+              console.log('Successfully executed Statement ');
+              // console.log('Successfully executed statement: ' + statement.getStatus);
             }
           },
         });
