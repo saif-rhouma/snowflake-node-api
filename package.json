@@ -1,0 +1,33 @@
+{
+  "name": "snowflake-node-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js",
+    "debug": "npm run dev -- --inspect",
+    "test": "jest --runInBand",
+    "test:watch": "npm test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saif-rhouma/snowflake-node-api.git"
+  },
+  "keywords": [
+    "Snowflake"
+  ],
+  "author": "SaifEddine Rhouma [Avaxia Dev Team]",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saif-rhouma/snowflake-node-api/issues"
+  },
+  "homepage": "https://github.com/saif-rhouma/snowflake-node-api#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/node": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "babel-jest": "^28.1.3",
+    "jest": "^28.1.3"
+  }
+}
