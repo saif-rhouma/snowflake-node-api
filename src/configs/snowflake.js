@@ -1,9 +1,9 @@
 module.exports = {
   production: {
-    account: 'mx85022',
-    username: 'tahriAziz',
-    password: '(Azerty)  0101',
-    region: 'japan-east.azure',
+    account: 'oz26185',
+    username: 'saif1991',
+    password: 'Admin123456*',
+    region: 'switzerland-north.azure',
   },
   development: {
     account: process.env.SN_ACCOUNT || 'oz26185',
