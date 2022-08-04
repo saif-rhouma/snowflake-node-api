@@ -69,6 +69,36 @@ class Snowflake {
     });
   }
 
+  async executeQueryRaw(query, logging = true) {
+    return new Promise((resolve, reject) => {
+      try {
+        this.connection.execute({
+          sqlText: query,
+          // streamResult: true,
+          complete: (err, statement, _rows) => {
+            if (err) {
+              console.error(err);
+              reject(err);
+            } else {
+              console.log('first');
+              resolve(_rows);
+              if (logging) {
+                console.log('Query id: ', statement.getStatementId());
+                console.log('Query Text:\n ', query);
+                console.log('Successfully executed Statement ');
+                // console.log('Successfully executed statement: ' + statement.getStatus);
+              }
+            }
+          },
+        });
+      } catch (error) {
+        reject(error);
+      }
+    }).catch((error) => {
+      return error;
+    });
+  }
+
   async disconnect() {
     return new Promise((resolve, reject) => {
       try {

@@ -15,6 +15,9 @@ class SnowflakePool {
   async executeQuery(query, logging = true) {
     return await this.sn.executeQuery(query, logging);
   }
+  async executeQueryRaw(query, logging = true) {
+    return await this.sn.executeQueryRaw(query, logging);
+  }
   async destroy() {
     return await this.sn.disconnect();
   }
