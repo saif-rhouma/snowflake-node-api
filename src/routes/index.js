@@ -4,6 +4,6 @@ import pocRoutes from './poc.routes';
 const router = Router();
 
 router.use(apiRoutes);
-router.use(pocRoutes);
+router.use('/api', pocRoutes);
 
 export default router;

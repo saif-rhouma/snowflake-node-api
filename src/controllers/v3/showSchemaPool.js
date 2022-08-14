@@ -4,6 +4,7 @@ import SnowflakePool from '../../utils/snowflakePool';
 const showSchemaPool = async (req, res) => {
   try {
     const query = Queries.getSchema(req.body.database);
+    console.log(query);
     const sn = new SnowflakePool();
     const data = await sn.executeQueryRaw(query);
     const result = data.map((elem) => {

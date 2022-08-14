@@ -1,15 +1,15 @@
 module.exports = {
   production: {
-    account: 'bm92016',
-    username: 'SARRAAKRT',
-    password: 'Test123456',
-    region: 'switzerland-north.azure',
+    account: process.env.SN_ACCOUNT || 'oz26185',
+    username: process.env.SN_USERNAME || 'saif1991',
+    password: process.env.SN_PASSWORD || 'Admin123456*',
+    region: process.env.SN_REGION || 'switzerland-north.azure',
   },
   development: {
-    account: 'bm92016',
-    username: 'SARRAAKRT',
-    password: 'Test123456',
-    region: 'switzerland-north.azure',
+    account: process.env.SN_DEV_ACCOUNT || 'oz26185',
+    username: process.env.SN_DEV_USERNAME || 'saif1991',
+    password: process.env.SN_DEV_PASSWORD || 'Admin123456*',
+    region: process.env.SN_DEV_REGION || 'switzerland-north.azure',
   },
   test: {
     account: process.env.SN_TEST_ACCOUNT || 'oz26185',
