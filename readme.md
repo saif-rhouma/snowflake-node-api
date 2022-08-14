@@ -1,4 +1,4 @@
-# Avaxia Snowflake Node Api Project
+# Snowflake Node Api Project
 
 ## Prerequisites
 
