@@ -80,7 +80,6 @@ class Snowflake {
               console.error(err);
               reject(err);
             } else {
-              console.log('first');
               resolve(_rows);
               if (logging) {
                 console.log('Query id: ', statement.getStatementId());
